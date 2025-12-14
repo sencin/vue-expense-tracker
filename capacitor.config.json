@@ -3,11 +3,11 @@
   "appName": "expense-tracker",
   "android": {
     "buildOptions": {
-      "releaseType": "APK",
+      "releaseType": "AAB",
       "keystorePath": "/workspaces/vue-expense-tracker/my-release-key.jks",
-      "keystorePassword": "<pass>",
+      "keystorePassword": "pass",
       "keystoreAlias": "alias_name",
-      "keystoreAliasPassword": "<pass>"
+      "keystoreAliasPassword": "pass"
     }
   },
   "webDir": "dist"
