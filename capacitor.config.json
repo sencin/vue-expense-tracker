@@ -1,5 +1,14 @@
 {
   "appId": "com.uwu.expensetracker",
   "appName": "expense-tracker",
+  "android": {
+    "buildOptions": {
+      "releaseType": "AAB",
+      "keystorePath": "/workspaces/vue-expense-tracker/my-release-key.jks",
+      "keystorePassword": "<pass>",
+      "keystoreAlias": "alias_name",
+      "keystoreAliasPassword": "<pass>"
+    }
+  },
   "webDir": "dist"
 }

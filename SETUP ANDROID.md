@@ -71,3 +71,42 @@ adb devices
 sdkmanager --version
 
 Your Android SDK is now installed and configured in your Ubuntu terminal environment.
+
+
+
+
+
+
+
+
+
+FOR BUILDING APk
+
+
+This is generally the recommended approach for managing signing configurations. 
+1.Create a Keystore: If you don't already have one, generate a keystore file using Android Studio (Build > Generate Signed Bundle/APK > Create new) or the keytool command-line utility.
+bash
+
+keytool -genkey -v -keystore my-release-key.jks -keyalg RSA -keysize 2048 -validity 10000 -alias alias_name
+
+fill up the questions after entirring
+
+2.For capacitor.config.json:
+json
+{
+  "appId": "...",
+  "appName": "...",
+  // ... other configurations
+  "android": {
+    "buildOptions": {
+      "releaseType": "AAB",
+      "keystorePath": "/path/to/your/my-release-key.jks",
+      "keystorePassword": "your_keystore_password",
+      "keystoreAlias": "alias_name",
+      "keystoreAliasPassword": "your_alias_password"
+    }
+  }
+}
+
+
+npx cap build android
