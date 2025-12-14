@@ -110,3 +110,22 @@ json
 
 
 npx cap build android
+
+
+2. run this command
+
+java -jar bundletool-all-1.18.2.jar build-apks \
+  --bundle=android/app/build/outputs/bundle/release/app-release.aab \
+  --output=app.apks \
+  --mode=universal \
+  --ks=/workspaces/vue-expense-tracker/my-release-key.jks \
+  --ks-pass=pass:00000000 \
+  --ks-key-alias=alias_name \
+  --key-pass=pass:00000000
+
+
+Step 2: Extract the APK
+The command will create a file named app.apks. You need to rename it to a zip file and extract the universal APK within it:
+bash
+mv app.apks app.zip
+unzip app.zip
